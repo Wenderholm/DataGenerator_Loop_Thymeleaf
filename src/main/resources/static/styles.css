@@ -22,3 +22,15 @@ fieldset {
 label {
     margin: 8px 16px;
 }
+
+table {
+    width: 100%;
+    max-width: 1000px;
+    table-layout: fixed;
+    margin: 0 auto;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-spacing: 0;
+}

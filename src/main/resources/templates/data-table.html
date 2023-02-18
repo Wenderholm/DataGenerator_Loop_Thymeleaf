@@ -1,10 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl" xmlns:th="https://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>Title</title>
+    <meta charset="UTF-8">
+    <title>Dane testowe</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
+<h1>Wygenerowane dane</h1>
+<table>
+    <thead>
+    <tr>
+        <th th:each="header: ${data.keySet()}" th:text="${header}"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <!--  ustawiamy zakres i od 0 do size - 1 i przechodzimy w pętli  -->
+    <tr th:each="i:${#numbers.sequence(0,size - 1)}">
+    <!--  kolejna pętla przechodzimy po key. gdzie dla kazdego key pobieramy dane z jego value -->
+        <td th:each="key:${data.keySet()}" th:text="${data.get(key).get(i)}">TestCell</td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>
