@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Generator danych</title>
+<!--    <link rel="stylesheet" href="../static/styles.css">-->
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>Generator danych</h1>
+    <form method="post" action="/generate-data">
+        <fieldset>
+            <label for="size">
+                Ile danych chcesz wygenerować?
+                <input name="size" id="size" type="number" min="1" placeholder="1">
+            </label>
+            <label>
+                Język generowanych danych
+                <select name="language">
+                    <option value="pl-PL">Polski</option>
+                    <option value="en-US">Angielski</option>
+                </select>
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <p>Co chcesz wygenerować?</p>
+            <div>
+                <label>
+                    Imię
+                    <input type="checkbox" name="firstName">
+                </label>
+                <label>
+                    Nazwisko
+                    <input type="checkbox" name="lastName">
+                </label>
+                <label>
+                    Uczelnia
+                    <input type="checkbox" name="university">
+                </label>
+                <label>
+                    Kraj pochodzenia
+                    <input type="checkbox" name="country">
+                </label>
+            </div>
+        </fieldset>
+        <button type="submit">Generuj dane</button>
+    </form>
+</div>
+</body>
+</html>
